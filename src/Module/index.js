@@ -8,14 +8,14 @@ const ACTION_CLEAR_ERROR = 'CLEAR_ERROR',
 	ACTION_RESET_STATE = 'INITIAL_STATE';
 
 class Module {
-	constructor(name, initialState) {
+	constructor(name, initialState = {}) {
 		this.name = name;
 		this.nameLen = name.length;
 
 		this.initalState = {
 			isLoading: false,
 			error: null,
-			...initialState
+			// ...initialState,
 		};
 
 		this.actions = {};
@@ -98,7 +98,7 @@ class Module {
 	onNotAsync(state, type, payload) {
 		switch (type) {
 			case ACTION_RESET_STATE:
-				return { ...this.initalState }
+				return this.initalState
 
 		}
 		return state;

@@ -1,7 +1,7 @@
 {
   "name": "react-redux-basics",
   "version": "0.0.1",
-  "description": "A basic module helper for storing and managing local data",
+  "description": "A basic helpers for storing and managing local data",
   "author": "Evgeniy Kirichok <evgeniy.kirichok@gmail.com>",
   "license": "Apache-2.0",
   "private": false,
@@ -35,7 +35,23 @@
     "qs": "^6.5.2"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-es2015": "^6.24.1",
     "qs": "^6.5.2"
+  },
+  "babel": {
+    "parser": "babel-eslint",
+    "env": {
+      "es6": true
+    },
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "scripts": {
+    "build": "babel source --presets babel-preset-es2015 --out-dir distribution"
   }
 }

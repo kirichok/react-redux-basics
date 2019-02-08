@@ -16,12 +16,19 @@ module.exports = {
 	get Module() {
 		return {
 			get Basic() {
-				return require('./src/Module');
+				return require('./src/Module/index');
 			},
 			get Table() {
 				return require('./src/Module/Table');
+			},
+			get Auth() {
+				return require('./src/Module/Auth');
 			}
 		}
+	},
+
+	get LocalStorage() {
+		return require('./src/LocalStorage');
 	},
 
 	get Store() {
